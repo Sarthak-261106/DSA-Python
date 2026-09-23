@@ -22,7 +22,8 @@ def mvalgo(nums):
             count=1
         else:
             count+=1        
-            
+    if max_count<count:
+        majority_ele=nums[-1]       
 
     return majority_ele,max_count  
 

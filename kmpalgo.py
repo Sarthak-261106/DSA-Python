@@ -67,7 +67,7 @@ def computeLPS(str, lps):
                     lps[i]=0
                     i+=1
 
-            return
+            
         
 def kmpalgo(haystack,needle):
     n=len(haystack)

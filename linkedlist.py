@@ -85,19 +85,19 @@ class linkedlist:
         return slow
 
 
-    newhead=None
-    def reverse(self,curr):
-        if curr.next==None:
-            self.newhead=node(curr.val)
-            self.head=self.newhead
-            return
+    # newhead=None
+    # def reverse(self,curr):
+    #     if curr.next==None:
+    #         self.newhead=node(curr.val)
+    #         self.head=self.newhead
+    #         return
 
-        self.reverse(curr.next)
-        temp=self.newhead    
-        while temp.next!=None:
-            temp=temp.next
+    #     self.reverse(curr.next)
+    #     temp=self.newhead    
+    #     while temp.next!=None:
+    #         temp=temp.next
 
-        temp.next=node(curr.val)    
+    #     temp.next=node(curr.val)    
         
 
     # def reverseList(self, head):
@@ -111,7 +111,17 @@ class linkedlist:
 
     #     return new_head
 
+    def reverse(self):
+        prev=None
+        curr=self.head
 
+        while curr!=None:
+            nextnode=curr.next
+            curr.next=prev
+            prev=curr
+            curr=nextnode
+
+        self.head=prev
 
 
             

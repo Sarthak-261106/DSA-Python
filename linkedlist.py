@@ -123,5 +123,15 @@ class linkedlist:
 
         self.head=prev
 
+    def detectcycle(self):
+        slow=self.head    
+        fast=self.head 
+
+        while slow!=None and fast!=None and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+
+            if slow==fast:
+                return True
 
             

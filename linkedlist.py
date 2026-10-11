@@ -15,3 +15,18 @@ class linkedlist:
         while temp!=0:
             print(temp.val, end="")
             temp=temp.next
+
+    def inserttail(self, value):
+        if self.head==None:
+            self.head=node(value)
+            return
+
+        temp=self.head
+        while temp.next!=None:
+            temp=temp.next
+
+        temp.next=node(value)    
+
+
+
+            

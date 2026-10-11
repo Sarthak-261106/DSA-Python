@@ -60,20 +60,57 @@ class linkedlist:
 
         temp.next=temp.next.next
 
-    def middle(self):
-        lenght=0
-        temp=self.head
-        while temp!=None:
-            lenght+=1
-            temp=temp.next
+    # def middle(self):
+    #     lenght=0
+    #     temp=self.head
+    #     while temp!=None:
+    #         lenght+=1
+    #         temp=temp.next
         
-        target=lenght//2+1
-        count=0
-        temp=self.head
-        while count<target:
+    #     target=lenght//2+1
+    #     count=0
+    #     temp=self.head
+    #     while count<target:
+    #         temp=temp.next
+    #         count+=1
+    #     return temp    
+
+    def middle(self):
+        slow=self.head
+        fast=self.head
+
+        while fast!=None and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+        return slow
+
+
+    newhead=None
+    def reverse(self,curr):
+        if curr.next==None:
+            self.newhead=node(curr.val)
+            self.head=self.newhead
+            return
+
+        self.reverse(curr.next)
+        temp=self.newhead    
+        while temp.next!=None:
             temp=temp.next
-            count+=1
-        return temp    
+
+        temp.next=node(curr.val)    
+        
+
+    # def reverseList(self, head):
+    #     if head==None or head.next==None:
+    #         return head
+
+    #     new_head = self.reverseList(head.next)
+
+    #     head.next.next = head
+    #     head.next = None
+
+    #     return new_head
+
 
 
 

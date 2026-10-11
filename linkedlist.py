@@ -60,5 +60,21 @@ class linkedlist:
 
         temp.next=temp.next.next
 
+    def middle(self):
+        lenght=0
+        temp=self.head
+        while temp!=None:
+            lenght+=1
+            temp=temp.next
+        
+        target=lenght//2+1
+        count=0
+        temp=self.head
+        while count<target:
+            temp=temp.next
+            count+=1
+        return temp    
+
+
 
             

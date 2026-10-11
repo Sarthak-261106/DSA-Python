@@ -25,8 +25,40 @@ class linkedlist:
         while temp.next!=None:
             temp=temp.next
 
-        temp.next=node(value)    
+        temp.next=node(value)  
 
+    def inserthead(self, value):
+        if self.head==None:
+            self.head=node(value)
+            return
+
+        temp=node(value)
+        temp.next=self.head
+        self.head=temp  
+
+    def insertatk(self, value, k):
+        if k==0:
+            self.inserthead(value)
+            return
+
+        temp=self.head
+        for i in range(k-1):
+            temp=temp.next
+
+        newnode=node(value)
+        newnode.next=temp.next
+        temp.next=newnode
+
+    def deletion(self, k):
+        if k==0:
+            self.head=self.head.next
+            return
+
+        temp=self.head
+        for i in range(k-1):
+            temp=temp.next
+
+        temp.next=temp.next.next
 
 
             
